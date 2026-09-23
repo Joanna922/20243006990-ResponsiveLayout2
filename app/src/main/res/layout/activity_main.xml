@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_lab1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Lab 1"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_responsive_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"/>
+
+    <!-- ========== Responsive Layout 1 weight=1 ========== -->
+    <TextView
+        android:id="@+id/tv_responsive_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Responsive Layout 1"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="24dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/tv_lab1"
+        app:layout_constraintBottom_toTopOf="@id/color_group"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"/>
+
+    <!-- ========== 四个彩色块，独立白色容器 weight=1 ========== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/color_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/tv_responsive_title"
+        app:layout_constraintBottom_toTopOf="@id/tv_app_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1">
+
+        <!--红色 This -->
+        <TextView
+            android:id="@+id/color_tv1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#ff0000"
+            android:text="This"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/color_tv2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"/>
+
+        <!--蓝色 is -->
+        <TextView
+            android:id="@+id/color_tv2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#0033ff"
+            android:text="is"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/color_tv1"
+            app:layout_constraintEnd_toStartOf="@id/color_tv3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"/>
+
+        <!--紫色 my -->
+        <TextView
+            android:id="@+id/color_tv3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#7b41bc"
+            android:text="my"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/color_tv2"
+            app:layout_constraintEnd_toStartOf="@id/color_tv4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"/>
+
+        <!--黄色 first -->
+        <TextView
+            android:id="@+id/color_tv4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#ffff00"
+            android:text="first"
+            android:textColor="#000000"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/color_tv3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ========== Android Application weight=2 ========== -->
+    <TextView
+        android:id="@+id/tv_app_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Android Application"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/color_group"
+        app:layout_constraintBottom_toTopOf="@id/button_wrapper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="2"/>
+
+    <!-- ========== button weight=1 ========== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#f8f4f8"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1">
+
+        <Button
+            android:id="@+id/btnChange"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Change"
+            android:layout_margin="8dp"
+            android:backgroundTint="#7b41bc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnCancel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"/>
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_margin="8dp"
+            android:backgroundTint="#7b41bc"
+            app:layout_constraintStart_toEndOf="@id/btnChange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
